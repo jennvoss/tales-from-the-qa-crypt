@@ -15,6 +15,7 @@
     "mockApi": "json-server -c db/json-server.json db/db.json"
   },
   "devDependencies": {
+    "cypress": "^1.4.1",
     "json-server": "^0.12.1"
   }
 }
