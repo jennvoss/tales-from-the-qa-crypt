@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  ui:
+    image: node:8
+
+    # host:container
+    ports:
+      - 3000:3000
+
+    # mount our current directory to the container
+    volumes:
+      - .:/usr/src/ui
+
+    # commands to run when the container starts
+    command: >
+      bash -c "cd usr/src/ui &&
+               npm install &&
+               npm start"
