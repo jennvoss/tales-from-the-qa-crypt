@@ -1,0 +1,8 @@
+FROM cypress/base:8
+
+# Install Cypress
+# --unsafe-perm is needed to run the postinstall script from cypress
+# Without it, the following command will result in a permission denied error
+RUN npm install -g cypress@^1.4 --unsafe-perm=true
+
+RUN cypress verify

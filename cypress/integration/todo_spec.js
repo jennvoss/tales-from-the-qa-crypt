@@ -1,6 +1,6 @@
 describe('Home Page', () => {
   before(() => {
-    cy.visit('http://localhost:3000');
+    cy.visit('/');
   });
 
   it('should load without error', () => {

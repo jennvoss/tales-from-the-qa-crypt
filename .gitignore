@@ -5,7 +5,9 @@
 
 # testing
 /coverage
+/.Trash-0
 /cypress/videos
+/cypress/screenshots
 
 # production
 /build

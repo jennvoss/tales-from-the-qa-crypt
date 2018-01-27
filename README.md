@@ -13,6 +13,10 @@ Visit http://localhost:3000
 
 Visit http://localhost:4000
 
+### Test mode:
+
+`docker-compose -f docker-compose.test.yml up --abort-on-container-exit`
+
 ## Notes
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
