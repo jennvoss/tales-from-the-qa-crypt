@@ -16,5 +16,5 @@ services:
       - .:/usr/src/ui
     command: >
       bash -c "cd usr/src/ui &&
-               npm install &&
+              #  npm install &&
                npm run build"

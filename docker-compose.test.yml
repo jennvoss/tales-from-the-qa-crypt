@@ -23,7 +23,7 @@ services:
               
     command: >
       bash -c "cd usr/src/ui && 
-               npm install --production && 
+              #  npm install --production && 
                npx react-scripts test --env=jsdom &&
                npm run build &&
                cypress run"

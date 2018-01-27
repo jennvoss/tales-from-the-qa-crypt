@@ -15,5 +15,5 @@ services:
     # commands to run when the container starts
     command: >
       bash -c "cd usr/src/ui &&
-               npm install &&
+              #  npm install &&
                npm start"
