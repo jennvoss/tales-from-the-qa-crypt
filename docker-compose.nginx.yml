@@ -6,7 +6,6 @@ services:
     volumes:
       - ./build:/usr/share/nginx/html
       - ./nginx.conf:/etc/nginx/nginx.conf
-    # Access the site at port 4000
     ports:
       - 4000:80
 
