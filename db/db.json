@@ -2,17 +2,22 @@
   "todos": [
     {
       "id": 1,
-      "name": "Todo 1",
+      "name": "tighten thumbscrews",
       "isComplete": true
     },
     {
       "id": 2,
-      "name": "Todo 2",
+      "name": "empty blood buckets",
       "isComplete": false
     },
     {
       "id": 3,
-      "name": "Todo 3",
+      "name": "breed spiders",
+      "isComplete": false
+    },
+    {
+      "id": 4,
+      "name": "sharpen axe",
       "isComplete": false
     }
   ]

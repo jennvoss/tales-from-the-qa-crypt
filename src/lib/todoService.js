@@ -1,12 +1,12 @@
 const baseUrl = process.env.REACT_APP_MOCK_API
 
 export const loadTodos = () => {
-  return fetch(baseUrl + 'todos')
+  return fetch(`${baseUrl}/todos/`)
     .then(res => res.json())
 }
 
 export const createTodo = (todo) => {
-  return fetch(baseUrl, {
+  return fetch(`${baseUrl}/todos/`, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -17,7 +17,7 @@ export const createTodo = (todo) => {
 }
 
 export const saveTodo = (todo) => {
-  return fetch(`${baseUrl}/${todo.id}`, {
+  return fetch(`${baseUrl}/todos/${todo.id}`, {
     method: 'PUT',
     headers: {
       'Accept': 'application/json',
@@ -28,11 +28,11 @@ export const saveTodo = (todo) => {
 }
 
 export const destroyTodo = (id) => {
-  return fetch(`${baseUrl}/${id}`, {
+  return fetch(`${baseUrl}/todos/${id}`, {
     method: 'DELETE',
     headers: {
-      'Accept': 'application/json',
+      Accept: 'application/json',
       'Content-Type': 'application/json'
     }
-  })
+  });
 }
