@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "name": "Test Todo Fixture 1",
+      "isComplete": true
+    },
+    {
+      "id": 2,
+      "name": "Test Todo Fixture 2",
+      "isComplete": false
+    },
+    {
+      "id": 3,
+      "name": "Test Todo Fixture 3",
+      "isComplete": false
+    }
+  ]
+}
