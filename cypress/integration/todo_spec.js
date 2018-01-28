@@ -5,30 +5,30 @@ describe('Todo App Tests', function() {
         .server()
         .route({
           method: 'GET',
-          url: 'http://localhost:3001/api/todos',
+          url: '/api/todos',
           response: todos
         })
         .route({
           method: 'POST',
-          url: 'http://localhost:3001/api/todos',
+          url: '/api/todos',
           status: 201,
           response: {}
         })
         .route({
           method: 'DELETE',
-          url: 'http://localhost:3001/api/todos/*',
+          url: '/api/todos/*',
           status: 200,
           response: {}
         })
         .route({
           method: 'OPTIONS',
-          url: 'http://localhost:3001/api/todos/*',
+          url: '/api/todos/*',
           status: 204,
           response: {}
         })
         .route({
           method: 'PUT',
-          url: 'http://localhost:3001/api/todos/*',
+          url: '/api/todos/*',
           status: 200,
           response: {}
         });
@@ -81,7 +81,7 @@ describe('Todo App Tests', function() {
 
   it('Filters to Active Todos via URL', function() {
     cy
-      .visit('http://localhost:3000/active')
+      .visit('/active')
       .get('@list')
       .should('have.length', 2);
   });
@@ -96,7 +96,7 @@ describe('Todo App Tests', function() {
 
   it('Filters to Complete Todos via URL', function() {
     cy
-      .visit('http://localhost:3000/complete')
+      .visit('/complete')
       .get('@list')
       .should('have.length', 1);
   });
