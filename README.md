@@ -15,7 +15,7 @@ Visit http://localhost:4000
 
 ### Test mode:
 
-`docker-compose -f docker-compose.test.yml up --abort-on-container-exit`
+`docker-compose -f docker-compose.test.yml up --build --exit-code-from test`
 
 ## Notes
 
