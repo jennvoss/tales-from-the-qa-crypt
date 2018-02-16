@@ -19,12 +19,10 @@ services:
         ipv4_address: 172.16.86.10
 
     volumes:
-      - .:/usr/src/ui
+      - .:/app
               
     command: >
-      bash -c "cd usr/src/ui && 
-               npm install --production && 
-               npm run build &&
+      bash -c "npm run build &&
                cypress run"
 
   nginx:

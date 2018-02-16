@@ -9,11 +9,11 @@ services:
     ports:
       - 4000:80
 
-  build:
-    image: node:8
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
     volumes:
-      - .:/usr/src/ui
+      - .:/app
     command: >
-      bash -c "cd usr/src/ui &&
-               npm install &&
-               npm run build"
+      bash -c "npm run build"
