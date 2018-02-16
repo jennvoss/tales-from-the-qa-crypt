@@ -6,7 +6,8 @@ services:
 
     # host:container
     ports:
-      - 3000:3000
+      - 3333:3000
+      - 3001:3001
 
     # mount our current directory to the container
     volumes:
