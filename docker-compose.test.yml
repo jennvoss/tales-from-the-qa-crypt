@@ -37,6 +37,8 @@ services:
     networks:
       app_net:
         ipv4_address: 172.16.86.11
+    logging:
+      driver: none
 
 networks:
   app_net:
