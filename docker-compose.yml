@@ -2,19 +2,20 @@ version: '3'
 
 services:
   ui:
-    image: node:8
+    build:
+      context: .
+      dockerfile: Dockerfile.local
 
     # host:container
     ports:
       - 3333:3000
       - 3001:3001
 
-    # mount our current directory to the container
+    # mount current directory to /app in the container
     volumes:
-      - .:/usr/src/ui
+      - .:/app
 
     # commands to run when the container starts
     command: >
-      bash -c "cd usr/src/ui &&
-               npm install &&
+      bash -c "ln -sfn ../node_modules ./node_modules &&
                npm start"

@@ -1,8 +1,13 @@
 FROM cypress/base:8
 
-# Install Cypress
-# --unsafe-perm is needed to run the postinstall script from cypress
-# Without it, the following command will result in a permission denied error
-RUN npm install -g cypress@^1.4 --unsafe-perm=true
+# Downgrade npm due to an issue with 5.7.1, see https://github.com/npm/npm/issues/19989
+RUN npm i -g npm@5.6.0
 
-RUN cypress verify
+# Provide a cached layer for node_modules
+COPY package*.json /
+RUN npm install
+RUN $(npm bin)/cypress install
+RUN $(npm bin)/cypress verify
+
+# Any commands start from this directory IN the container
+WORKDIR /app

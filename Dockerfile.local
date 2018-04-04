@@ -1,0 +1,8 @@
+FROM node:8
+
+# Provide a cached layer for node_modules
+COPY package*.json /
+RUN npm install
+
+# Any commands start from this directory IN the container
+WORKDIR /app

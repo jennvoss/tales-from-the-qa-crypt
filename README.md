@@ -5,7 +5,7 @@
 
 `docker-compose up`
 
-Visit http://localhost:3000
+Visit http://localhost:3333
 
 ### Production mode:
 
