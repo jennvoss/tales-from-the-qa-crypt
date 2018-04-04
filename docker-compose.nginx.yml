@@ -16,4 +16,5 @@ services:
     volumes:
       - .:/app
     command: >
-      bash -c "npm run build"
+      bash -c "ln -sfn ../node_modules ./node_modules &&
+               npm run build"

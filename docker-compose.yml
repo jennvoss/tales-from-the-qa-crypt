@@ -17,4 +17,5 @@ services:
 
     # commands to run when the container starts
     command: >
-      bash -c "npm start"
+      bash -c "ln -sfn ../node_modules ./node_modules &&
+               npm start"

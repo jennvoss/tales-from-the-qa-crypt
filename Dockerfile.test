@@ -1,8 +1,6 @@
 FROM cypress/base:8
 
-# Provides cached layer for node_modules
-# these are installed in the directory above the /app
-# folder so node will automatically look for them
+# Provide a cached layer for node_modules
 COPY package*.json /
 RUN npm install
 RUN $(npm bin)/cypress install
