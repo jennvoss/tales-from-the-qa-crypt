@@ -3,19 +3,19 @@
 ## Start the site
 ### Development mode:
 
-`docker-compose up --build`
+`docker-compose up`
 
 Visit http://localhost:3333
 
 ### Production mode:
 
-`docker-compose -f docker-compose.nginx.yml up --build`
+`docker-compose -f docker-compose.nginx.yml up`
 
 Visit http://localhost:4000
 
 ### Test mode:
 
-`docker-compose -f docker-compose.test.yml up --build --exit-code-from test`
+`docker-compose -f docker-compose.test.yml up --exit-code-from test`
 
 ## Notes
 
