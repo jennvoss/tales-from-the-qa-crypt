@@ -2,9 +2,7 @@ version: '3'
 
 services:
   ui:
-    build:
-      context: .
-      dockerfile: Dockerfile.local
+    image: node:8
 
     # host:container
     ports:
@@ -17,5 +15,6 @@ services:
 
     # commands to run when the container starts
     command: >
-      bash -c "ln -sfn ../node_modules ./node_modules &&
+      bash -c "cd /app &&
+               npm install && 
                npm start"
