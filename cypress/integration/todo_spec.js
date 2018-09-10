@@ -1,3 +1,11 @@
+const testSuccessMessage = () => {
+  cy.get('.success').should('be.visible');
+  // message disappears, but we should select it in the DOM again
+  // because React re-renders everything, so the previous DOM element
+  // is no longer there!
+  cy.get('.success').should('not.exist');
+};
+
 describe('Todo App Tests', function() {
   beforeEach(function() {
     cy.fixture('todos').then(({todos}) => {
@@ -52,11 +60,8 @@ describe('Todo App Tests', function() {
       .get('div.Todo-List > ul > li:nth-child(1) > input[type="checkbox"]')
       .should('be.checked')
       .click()
-      .should('not.be.checked')
-      .get('.success')
-      .should('be.visible')
-      .wait(2500)
-      .should('not.exist'); // No need to `get` again - will check against last el
+      .should('not.be.checked');
+    testSuccessMessage();
   });
 
   it('Toggles a todo to complete', function() {
@@ -64,11 +69,8 @@ describe('Todo App Tests', function() {
       .get('div.Todo-List > ul > li:nth-child(2) > input[type="checkbox"]')
       .should('not.be.checked')
       .click()
-      .should('be.checked')
-      .get('.success')
-      .should('be.visible')
-      .wait(2500)
-      .should('not.exist');
+      .should('be.checked');
+    testSuccessMessage();
   });
 
   it('Filters to Active Todos via Click', function() {
@@ -123,10 +125,7 @@ describe('Todo App Tests', function() {
       .get('div.Todo-App > form > input[type="text"]')
       .type('Cypress Test Todo')
       .type('{enter}') // Separated out to make it obvious
-      .get('.success')
-      .should('be.visible')
-      .wait(2500) // Rendered again without message after 2500ms
-      .should('not.exist');
+    testSuccessMessage();
   });
 
   it('deletes a todo', function() {
@@ -134,9 +133,6 @@ describe('Todo App Tests', function() {
       .get('div.Todo-List > ul > li:last-child')
       .find('span > a')
       .click({force: true}) // force - because element isn't visible
-      .get('.success')
-      .should('be.visible')
-      .wait(2500) // Rendered again without message after 2500ms
-      .should('not.exist');
+    testSuccessMessage();
   });
 });
