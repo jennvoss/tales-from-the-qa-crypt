@@ -16,7 +16,7 @@
     "mockApi": "node db/server.js"
   },
   "devDependencies": {
-    "cypress": "^1.4.1",
+    "cypress": "^3.1.0",
     "json-server": "^0.12.1"
   }
 }
