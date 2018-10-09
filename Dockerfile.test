@@ -1,13 +1,7 @@
-FROM cypress/base:8
-
-# Downgrade npm due to an issue with 5.7.1, see https://github.com/npm/npm/issues/19989
-RUN npm i -g npm@5.6.0
-
-# Provide a cached layer for node_modules
-COPY package*.json /
-RUN npm install
-RUN $(npm bin)/cypress install
-RUN $(npm bin)/cypress verify
-
-# Any commands start from this directory IN the container
+FROM cypress/base:10 as test
 WORKDIR /app
+COPY package*.json /app/
+RUN npm install
+RUN $(npm bin)/cypress verify
+COPY /cypress.json /app/cypress.json
+COPY /cypress /app/cypress

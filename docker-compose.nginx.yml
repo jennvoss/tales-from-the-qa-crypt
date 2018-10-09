@@ -1,20 +1,9 @@
-version: '3'
+version: '3.4'
 
 services:
   nginx:
-    image: nginx:latest
-    volumes:
-      - ./build:/usr/share/nginx/html
-      - ./nginx.conf:/etc/nginx/nginx.conf
-    ports:
-      - 4000:80
-
-  ui:
     build:
       context: .
-      dockerfile: Dockerfile.local
-    volumes:
-      - .:/app
-    command: >
-      bash -c "ln -sfn ../node_modules ./node_modules &&
-               npm run build"
+      target: prod
+    ports:
+      - 4000:80
