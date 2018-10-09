@@ -9,7 +9,7 @@ Visit http://localhost:3333
 
 ### Production mode:
 
-`docker-compose -f docker-compose.nginx.yml up`
+`docker-compose -f docker-compose.nginx.yml up --build`
 
 Visit http://localhost:4000
 
