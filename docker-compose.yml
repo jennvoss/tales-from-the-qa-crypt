@@ -15,6 +15,7 @@ services:
     volumes:
       - .env:/app/.env
       - ./package.json:/app/package.json
+      - ./db:/app/db/
       - ./src:/app/src/
       - ./public:/app/public/
 
