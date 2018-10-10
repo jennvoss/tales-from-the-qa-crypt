@@ -9,7 +9,6 @@ FROM dev as build
 COPY .env /app/.env
 COPY /src /app/src
 COPY /public /app/public
-RUN ls
 RUN npm run build
 
 # ---- Prod ----

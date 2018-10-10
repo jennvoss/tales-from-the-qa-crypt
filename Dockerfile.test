@@ -3,5 +3,3 @@ WORKDIR /app
 COPY package*.json /app/
 RUN npm install
 RUN $(npm bin)/cypress verify
-COPY /cypress.json /app/cypress.json
-COPY /cypress /app/cypress

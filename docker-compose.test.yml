@@ -16,6 +16,9 @@ services:
     networks:
       app_net:
         ipv4_address: 172.16.86.10
+    volumes:
+      - ./cypress.json:/app/cypress.json
+      - ./cypress:/app/cypress
     command: >
       bash -c "npx cypress run"
 
