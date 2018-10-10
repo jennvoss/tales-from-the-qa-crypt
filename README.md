@@ -20,3 +20,13 @@ Visit http://localhost:4000
 ## Notes
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and [react-todo-cypress](https://github.com/avanslaars/react-todo-cypress)
+
+
+## Helpful docker commands
+
+List containers
+
+`docker ps`
+
+Stop container & ensure all networks are removed
+`docker-compose down`
