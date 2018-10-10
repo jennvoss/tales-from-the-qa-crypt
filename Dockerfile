@@ -6,7 +6,10 @@ RUN npm install --production
 
 # ---- Build ----
 FROM dev as build
-COPY . /app
+COPY .env /app/.env
+COPY /src /app/src
+COPY /public /app/public
+RUN ls
 RUN npm run build
 
 # ---- Prod ----

@@ -1,3 +1,4 @@
+import 'whatwg-fetch';
 const baseUrl = process.env.REACT_APP_MOCK_API
 
 export const loadTodos = () => {
