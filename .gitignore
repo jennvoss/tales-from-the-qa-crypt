@@ -8,6 +8,7 @@
 /.Trash-0
 /cypress/videos
 /cypress/screenshots
+/cypress/.Trash-0
 
 # production
 /build
